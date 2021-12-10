@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sample Vue Application</title>
+</head>
+
+<body>
+    <div id="app">
+        <img :src="logoSrc" alt="Boston University Logo" />
+
+        <h1>{{ courseName }}</h1>
+
+        <a :href="link">View Course Details</a>
+
+        <p v-if="offeredOnline">Offered on campus and online</p>
+        <p v-else>Offered on campus only</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                courseName: 'CS601: Web Application Development',
+                link: 'http://www.bu.edu/csmet/academic-programs/courses/cs601/',
+                logoSrc: './images/Vintko-logo.png',
+                offeredOnline: true
+            }
+        })
+    </script>
+</body>
+
+</html>
